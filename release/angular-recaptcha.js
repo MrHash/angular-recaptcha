@@ -1,7 +1,7 @@
 /**
- * angular-recaptcha build:2013-10-17 
+ * angular-recaptcha build:2014-01-03 
  * https://github.com/vividcortex/angular-recaptcha 
- * Copyright (c) 2013 VividCortex 
+ * Copyright (c) 2014 VividCortex 
 **/
 
 /*global angular, Recaptcha */
@@ -128,8 +128,10 @@
                         // model -> view
                         if (ctrl) {
                             ctrl.$render = function () {
-                                response_input.val(ctrl.$viewValue.response);
-                                challenge_input.val(ctrl.$viewValue.challenge);
+                                if(ctrl.$viewValue) {
+                                	response_input.val(ctrl.$viewValue.response);
+                                	challenge_input.val(ctrl.$viewValue.challenge);
+                                }
                             };
                         }
 

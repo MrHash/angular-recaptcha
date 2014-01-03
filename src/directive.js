@@ -42,8 +42,10 @@
                         // model -> view
                         if (ctrl) {
                             ctrl.$render = function () {
-                                response_input.val(ctrl.$viewValue.response);
-                                challenge_input.val(ctrl.$viewValue.challenge);
+                                if(ctrl.$viewValue) {
+                                	response_input.val(ctrl.$viewValue.response);
+                                	challenge_input.val(ctrl.$viewValue.challenge);
+                                }
                             };
                         }
 
